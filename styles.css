@@ -277,6 +277,28 @@ p { color: var(--text-muted); }
 
 .site-footer p { font-size: 0.85rem; }
 
+.footer-links p + p { margin-top: 8px; }
+
+.footer-links a { color: var(--text-muted); text-decoration: underline; }
+.footer-links a:hover { color: var(--gold); }
+
+/* Legal pages (Impressum/Datenschutz) */
+.legal { padding: 56px 0 80px; }
+
+.legal-inner { max-width: 720px; }
+
+.legal h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); margin-bottom: 32px; }
+
+.legal h2 { font-size: 1.15rem; text-align: left; margin: 32px 0 8px; }
+.legal h2:first-of-type { margin-top: 0; }
+
+.legal p, .legal li { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+.legal ul { padding-left: 20px; margin-bottom: 12px; }
+.legal li { margin-bottom: 4px; }
+
+.legal a { color: var(--gold); }
+
 /* Tablet+ */
 @media (min-width: 640px) {
   .pain-grid { grid-template-columns: 1fr 1fr; }
