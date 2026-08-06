@@ -23,6 +23,19 @@ Kein Build-Tooling, keine Dependencies — einfach `index.html` öffnen oder per
 
 Dunkles Theme, einheitliche Akzentfarbe Gold `#C9AA22` (Variable `--gold` in `styles.css:9`) auf dunklem Anthrazit-Hintergrund — ersetzt die frühere Pastell-Gradient-Version (Mint/Lavendel/Koralle). Folgt der globalen Stil-Vorgabe aus `C:\Claude\CLAUDE.md` (Akzentfarbe #C9AA22, dunkles Theme, mobile-first), hier zusätzlich bewusst "laut/dynamisch" über große Headlines in der Akzentfarbe statt über visuelle Unordnung.
 
+## Git-Workflow
+
+Zwei Branches, bewusst schlank gehalten:
+
+- **`main`** — Produktions-Branch. Nur fertige, getestete Merges. Verbunden mit Netlify "Production branch" → das ist die Live-Domain.
+- **`develop`** — täglicher Arbeits-Branch. Hier passiert die eigentliche Arbeit, Standard ist direktes Committen. Verbunden mit Netlify "Branch deploy" → eigene Vorschau-URL zum Testen vor dem Go-Live.
+
+Ablauf: Auf `develop` arbeiten und testen (lokal + Netlify-Branch-Preview) → wenn fertig & getestet: Merge `develop` → `main` → Netlify deployed automatisch live.
+
+Für größere/riskantere Änderungen optional ein kurzlebiger Feature-Branch von `develop` (z.B. `feature/pricing-update`), der per Merge zurück in `develop` geht — kein Zwang, nur bei Bedarf.
+
+**Nie direkt auf `main` committen.**
+
 ## Offene TODOs vor Live-Gang
 
 - **Social Proof (`index.html`, Abschnitt "SOCIAL PROOF")**: enthält aktuell nur generische, neutrale Trust-Signale (IDD-konforme Beratung, §3 Nr. 34 EStG, direkter Draht zum Versicherer als Handelsvertreter, kein Risiko) — bewusst **keine** erfundenen Kundenstimmen. Sobald echte Testimonials, Kundenlogos oder Kennzahlen vorliegen, hier ergänzen.
